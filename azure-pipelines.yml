@@ -17,17 +17,14 @@ variables:
   dockerfilePath: './Dockerfile'
 
 stages:
-- stage: Linting
-  displayName: 'Run lint tests'
-  jobs:
-  - job: python linting
-    displayName: linting
-    - script: |
-       python -m pip install flake8
-       flake8 .
 - stage: Build
   displayName: 'Build image'
   jobs:
+  - job: python linting
+    displayName: linting
+      script: |
+       python -m pip install flake8
+       flake8 .
   - job: Build
     displayName: Build
     steps:
