@@ -14,13 +14,16 @@
       #  paths:
           #    include:
             #    - src/*
+#trigger:
+#  branches:
+#   include:
+#    - master
+#  paths:
+#   include:
+#    - tutelage/*
+
 trigger:
-  branches:
-   include:
-    - master
-  paths:
-   include:
-    - tutelage/*
+ - master
 
 pool:
   vmImage: 'Ubuntu-18.04'
