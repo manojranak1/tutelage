@@ -17,14 +17,16 @@ variables:
   dockerfilePath: './Dockerfile'
 
 stages:
-- stage: Build
-  displayName: 'Build image'
+- stage: Linting_Build
+  displayName: 'Linting & Building Image'
   jobs:
   - job: pythonlinting
     displayName: linting
     steps:
     - script: |
-       python -m pip install flake8
+       apt install python3
+       apt install python3-pip
+       pip3 install flake8
        flake8 .
   - job: Build
     displayName: Build
