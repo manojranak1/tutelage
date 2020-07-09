@@ -22,7 +22,8 @@ stages:
   jobs:
   - job: python linting
     displayName: linting
-      script: |
+    steps:
+    - script: |
        python -m pip install flake8
        flake8 .
   - job: Build
