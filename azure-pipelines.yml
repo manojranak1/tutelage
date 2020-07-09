@@ -9,8 +9,8 @@
 trigger:
 - master
 
-resources:
-- repo: self
+pool:
+  vmImage: 'Ubuntu-16.04'
 
 variables:
   tag: '$(Build.BuildId)'
