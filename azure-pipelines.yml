@@ -6,8 +6,21 @@
 #
 #
 #
+#trigger:
+#  branches:
+          #    include:
+            #    - develop
+      #    - master
+      #  paths:
+          #    include:
+            #    - src/*
 trigger:
-- master
+  branches:
+   include:
+    - master
+  paths:
+   include:
+    - tutelage/*
 
 pool:
   vmImage: 'Ubuntu-18.04'
@@ -27,7 +40,7 @@ stages:
        apt install python3
        apt install python3-pip
        pip3 install flake8
-       flake8 .
+       python3 -m flake8 --statistics
   - job: Build
     displayName: Build
     steps:
