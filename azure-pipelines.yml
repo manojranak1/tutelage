@@ -20,7 +20,7 @@ stages:
 - stage: Build
   displayName: 'Build image'
   jobs:
-  - job: python linting
+  - job: pythonlinting
     displayName: linting
     steps:
     - script: |
