@@ -27,7 +27,7 @@ stages:
        apt install python3
        apt install python3-pip
        pip3 install flake8
-       flake8 .
+       /usr/local/bin/flake8 .
   - job: Build
     displayName: Build
     steps:
