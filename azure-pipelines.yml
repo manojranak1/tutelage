@@ -22,13 +22,11 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '{{ dockerfilePath }}'
+        dockerfile: ./Dockerfile
         tags: |
           $(tag)
