@@ -5,10 +5,11 @@ from redis import Redis
 app = Flask(__name__)
 redis = Redis(host='redis', port=6379)
 
+
 @app.route('/')
 def hello():
     redis.incr('hits')
-    return 'This Compose/Flask demo has been viewed %s time(s).' % redis.get('hits')
+    return 'This Compose/Flask demo  viewed %s time(s).' % redis.get('hits')
 
 
 if __name__ == "__main__":
