@@ -35,18 +35,16 @@ variables:
 stages:
 - stage: Linting_Build
   displayName: 'Linting & Building Image'
-  jobs:
-  - job: pythonlinting
-    displayName: linting
+  jobs:    
+  - job: Linting_Build
+    displayName: 'Linting & Build'
     steps:
     - script: |
        apt install python3
        apt install python3-pip
        pip3 install flake8
        python3 -m flake8 --statistics
-  - job: Build
-    displayName: Build
-    steps:
+      displayName: 'code Linting'
     - task: Docker@2
       displayName: Build an image
       inputs:
